@@ -1,7 +1,7 @@
 from functools import reduce, partial
 
 
-with open("aoc-001.txt") as f:
+with open("c:\\users\\derri\\downloads\\aoc-001.txt") as f:
     read_data = f.readlines()
 
 
@@ -35,14 +35,14 @@ def scan_for_numbers(num_string, side="left", **kwargs):
     return result
 
 
-def calibration(num_string, words_as_numbers=True):
+def calibration(num_string, **kwargs):
      return int(
-                scan_for_numbers(num_string, "left", words_as_numbers = words_as_numbers) + \
-                scan_for_numbers(num_string, "right", words_as_numbers = words_as_numbers)
+                scan_for_numbers(num_string, "left", **kwargs) + \
+                scan_for_numbers(num_string, "right", **kwargs)
                 )
 
 
-def solve(words_as_numbers):
+def solve(words_as_numbers=True):
     mapfunc = partial(calibration, words_as_numbers=words_as_numbers)
     calibrations = map(mapfunc, read_data)
     return reduce(lambda x, y: x + y, calibrations)
