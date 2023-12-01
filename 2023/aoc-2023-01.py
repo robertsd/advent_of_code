@@ -1,7 +1,7 @@
 from functools import reduce, partial
 
 
-with open("c:\\users\\derri\\downloads\\aoc-001.txt") as f:
+with open("aoc-001.txt") as f:
     read_data = f.readlines()
 
 
