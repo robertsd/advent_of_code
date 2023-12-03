@@ -40,12 +40,12 @@ def game_min_cubes(game):
 print( "Part 1:", 
     sum(
         [game_id(line) if is_valid(game(line)) else 0 for line in read_data]
-        )
     )
+)
 
 
 print( "Part 2:",
         sum(
             [reduce(lambda x, y: x * y, game_min_cubes(game(line)).values()) for line in read_data]
-            )
+        )
 )
