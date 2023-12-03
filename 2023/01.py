@@ -24,7 +24,7 @@ def scan_for_numbers(num_string, side="left", **kwargs):
     num_found = False
     pos = 0 if side == "left" else len(num_string)
     while (not num_found):
-        try_string = num_string[:pos] if side =="left" else num_string[pos:]
+        try_string = num_string[:pos] if side == "left" else num_string[pos:]
         result = find_first_number(try_string, **kwargs)
         if (len(result)> 0):
                 num_found = True
